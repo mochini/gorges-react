@@ -27,6 +27,7 @@
     "Buffer": true
   },
   "rules": {
+    "no-console": "off",
     "strict": 0,
     "comma-dangle": [
       2,
