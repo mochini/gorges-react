@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-class Static extends React.Component {
+class Button extends React.Component {
 
   static propTypes = {
     color: PropTypes.string
@@ -57,4 +57,4 @@ class Static extends React.Component {
 
 }
 
-export default Static
+export default Button
