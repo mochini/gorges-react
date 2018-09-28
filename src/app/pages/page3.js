@@ -1,7 +1,8 @@
+import ButtonRedux from '../components/button_redux'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-class Page3 extends React.Component {
+class Page2 extends React.Component {
 
   static contextTypes = {}
 
@@ -12,11 +13,13 @@ class Page3 extends React.Component {
   render() {
     return (
       <div>
-        Page3
+        <ButtonRedux />
+        <ButtonRedux color="blue" />
+        <ButtonRedux color="green" />
       </div>
     )
   }
 
 }
 
-export default Page3
+export default Page2

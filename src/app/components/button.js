@@ -4,34 +4,41 @@ import React from 'react'
 class Static extends React.Component {
 
   static propTypes = {
-    on: PropTypes.boolean
+    color: PropTypes.string
   }
 
   static defaultProps = {
+    color: 'red'
+  }
+
+  state = {
     on: true
   }
 
   _handleClick = this._handleClick.bind(this)
 
   render() {
-    const { label } = this.props
+    const { on } = this.state
     return (
       <div { ...this._getButton() }>
-        { label }
+        { on ? 'On' : 'Off' }
       </div>
     )
   }
 
   componentDidMount() {
-    console.log('component did mount')
+    const { color } = this.props
+    console.log(`${color} component did mount`)
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log('component did update')
+    const { color } = this.props
+    console.log(`${color} component did update`)
   }
 
   componentWillUnmount() {
-    console.log('component will unmount')
+    const { color } = this.props
+    console.log(`${color} component will unmount`)
   }
 
   _getButton() {
@@ -43,8 +50,9 @@ class Static extends React.Component {
   }
 
   _handleClick() {
-    const { color } = this.props
-    console.log(`${color} button clicked`)
+    this.setState({
+      on: !this.state.on
+    })
   }
 
 }

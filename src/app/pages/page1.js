@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import Static from '../components/static'
+import Button from '../components/button'
 
 class Page1 extends React.Component {
 
@@ -13,9 +13,9 @@ class Page1 extends React.Component {
   render() {
     return (
       <div>
-        <Static />
-        <Static label="I am blue" color="blue" />
-        <Static label="I am green" color="green" />
+        <Button />
+        <Button color="blue" />
+        <Button color="green" />
       </div>
     )
   }

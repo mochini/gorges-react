@@ -1,18 +1,18 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { createStore, applyMiddleware } from 'redux'
-import { combineReducers } from 'redux-rubberstamp'
+import { createStore, applyMiddleware, combineReducers } from 'redux'
+import buttonReduxReducer from './components/button_redux/reducer'
 import initReactFastclick from 'react-fastclick'
 import createApiRequest from 'redux-api-request'
 import { createLogger } from 'redux-logger'
 import thunkMiddleware from 'redux-thunk'
-import { Provider } from 'react-redux'
 import { hot } from 'react-hot-loader'
+import { Provider } from 'react-redux'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import Home from './pages/home'
 import Page1 from './pages/page1'
 import Page2 from './pages/page2'
+import Page3 from './pages/page3'
 import NotFound from './pages/not_found'
 
 initReactFastclick()
@@ -33,9 +33,10 @@ class App extends React.Component {
       <Provider store={ this.store }>
         <Router>
           <Switch>
-            <Route exact path="/" component={ Home } />
+            <Route exact path="/" component={ Page1 } />
             <Route path="/page1" component={ Page1 } />
             <Route path="/page2" component={ Page2 } />
+            <Route path="/page3" component={ Page3 } />
             <Route component={ NotFound } />
           </Switch>
         </Router>
@@ -45,7 +46,9 @@ class App extends React.Component {
 
   _getStore() {
 
-    const reducers = combineReducers([])
+    const reducers = combineReducers({
+      button: buttonReduxReducer
+    })
 
     const loggerMiddleware = createLogger({ collapsed: true })
 

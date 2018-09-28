@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import ButtonHOC from '../components/button_hoc'
 
 class Page2 extends React.Component {
 
@@ -12,7 +13,9 @@ class Page2 extends React.Component {
   render() {
     return (
       <div>
-        Page2
+        <ButtonHOC />
+        <ButtonHOC color="blue" />
+        <ButtonHOC color="green" />
       </div>
     )
   }
